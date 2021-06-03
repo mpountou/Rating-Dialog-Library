@@ -6,7 +6,12 @@
 ## Description
 
 A material designed app Rating Dialog for Android 
+
+
 <img src="screenshot/Animation.gif" width="35%"/>
+
+
+
 ## Features
 - Show dialog on a specific session
 - Ask user rate your app
