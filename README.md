@@ -7,6 +7,11 @@
 
 A material designed app Rating Dialog for Android 
 
+
+<img src="screenshot/Animation.gif" width="35%"/>
+
+
+
 ## Features
 - Show dialog on a specific session
 - Ask user rate your app
@@ -36,7 +41,7 @@ Add the dependency
 ## How to use
 
 
-```
+```kotlin
 var dialogManager = DialogManager(this)
 // you can use your custom title or let the default
 dialogManager.setDialogTitle("Rate My App!!")
