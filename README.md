@@ -41,7 +41,7 @@ Add the dependency
 ## How to use
 
 
-```
+```kotlin
 var dialogManager = DialogManager(this)
 // you can use your custom title or let the default
 dialogManager.setDialogTitle("Rate My App!!")
