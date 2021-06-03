@@ -9,14 +9,15 @@ class OptionManager {
     var CUSTOM_RATE_KEY = "CUSTOM_RATE_KEY"
     var CUSTOM_LATER_KEY = "CUSTOM_LATER_KEY"
     var CUSTOM_NEVER_KEY = "CUSTOM_NEVER_KEY"
-
+    var TIMES_USED_KEY = "TIMES_USED_KEY"
+    var THRESHOLD_KEY = "THRESHOLD_KEY"
     var NEVER_ASK_AGAIN_KEY = "NEVER_ASK_AGAIN"
-    var TIMES_LAUNCHED_KEY = "TIMES_LAUNCHED"
-    var TIMES_LAUNCHED = 1
+
 
     fun getSharedPref(context: Context):SharedPreferences{
         return context.getSharedPreferences("mypref",Context.MODE_PRIVATE)
     }
+
 
     fun setNeverAskAgain(context: Context,option: Boolean){
         var sp = getSharedPref(context)
@@ -70,6 +71,25 @@ class OptionManager {
     fun getNeverTitle(context: Context):String{
         var sp = getSharedPref(context)
         return sp.getString(CUSTOM_NEVER_KEY,""+context.resources.getString(R.string.never_title)).toString()
+    }
+
+    fun getTimesUsed(context: Context): Int{
+        var sp = getSharedPref(context)
+        return sp.getInt(TIMES_USED_KEY,0)
+    }
+    fun increaseTimesUsed(context: Context){
+        var sp = getSharedPref(context)
+        var timesUsed = sp.getInt(TIMES_USED_KEY,0) + 1
+        sp.edit().putInt(TIMES_USED_KEY,timesUsed).apply()
+    }
+    fun getThresholdLimit(context: Context):Int{
+        var sp = getSharedPref(context)
+        return sp.getInt(THRESHOLD_KEY,0)
+    }
+
+    fun setThresholdLimit(context: Context,threshold:Int){
+        var sp = getSharedPref(context)
+        sp.edit().putInt(THRESHOLD_KEY,threshold).apply()
     }
 
 }

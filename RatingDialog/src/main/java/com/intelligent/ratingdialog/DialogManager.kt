@@ -11,16 +11,24 @@ class DialogManager(context: Context) {
     private var om:OptionManager = OptionManager()
 
     public fun show(){
+
         var dialog = Dialog()
         var fm = getFragmentManager(context)
 
-
-        if (!om.getNeverAskAgain(context)){
+        var threshold = om.getThresholdLimit(context)
+        var timesUsed = om.getTimesUsed(context)
+        if ((!om.getNeverAskAgain(context) && threshold == 0)
+            || (!om.getNeverAskAgain(context) && threshold <= timesUsed)){
             dialog.show(fm!!,"")
         }
 
+        om.increaseTimesUsed(context)
+
     }
 
+    public fun shouldBeUsedMoreThan(times:Int){
+        om.setThresholdLimit(context,times)
+    }
     public fun setDialogTitle(title:String){
         om.setTitle(context,title)
     }

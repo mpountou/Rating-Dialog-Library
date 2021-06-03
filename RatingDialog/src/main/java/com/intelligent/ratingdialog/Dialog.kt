@@ -103,7 +103,7 @@ class Dialog: DialogFragment() {
         om.setRateTitle(requireContext(),resources.getString(R.string.rate_title).toString())
         om.setNeverTitle(requireContext(),resources.getString(R.string.never_title).toString())
         om.setLaterTitle(requireContext(),resources.getString(R.string.later_title).toString())
-
+        om.setThresholdLimit(requireContext(),0)
     }
 }
 
