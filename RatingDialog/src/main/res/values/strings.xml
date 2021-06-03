@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">example</string>
+    <string name="dialog_title">Rate App</string>
+    <string name="dialog_description">Ratings and Reviews are the best gift you can do for us! Rate us 5 stars and help us rise to the top.</string>
+    <string name="rate_title">RATE</string>
+    <string name="later_title">MAYBE LATER</string>
+    <string name="never_title">NEVER ASK AGAIN</string>
+
+</resources>
