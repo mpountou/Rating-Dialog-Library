@@ -40,11 +40,24 @@ Add the dependency
 
 ## How to use
 
-
+To show rating dialog just add those two lines
+```kotlin
+var dialogManager = DialogManager(this)
+dialogManager.show()
+  ```
+If you want to use custom title/description 
 ```kotlin
 var dialogManager = DialogManager(this)
 // you can use your custom title or let the default
 dialogManager.setDialogTitle("Rate My App!!")
 // same for description and buttons .. 
+dialogManager.show()
+  ```
+ If you want to show rating dialog to old users
+ ```kotlin
+var dialogManager = DialogManager(this)
+// every time you call the show() method a counter incement the times that app is used
+dialogManager.shouldBeUsedMoreThan(3) //(times)
+// if user used the app more than 3 times the dialog will be shown
 dialogManager.show()
   ```
