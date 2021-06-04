@@ -34,7 +34,7 @@ Add the dependency
 ```
 	dependencies {
 	
-	         implementation 'com.github.mpountou:Rating-Dialog-Library:0.0.1'
+	         implementation 'com.github.mpountou:Rating-Dialog-Library:0.0.3'
 	}
 ```
 
